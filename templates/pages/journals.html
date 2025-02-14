@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<article class="offset-4">
+    <h1 class="text-center">{% block title %} Журналы {% endblock %}</h1>
+</article>
+<div class="d-flex flex-column flex-sm-row w-100 gap-2">
+    <form method="POST" action="{{ url_for('journals') }}" enctype="multipart/form-data">
+        <input name="journal" type="file" accept="application/pdf">
+        <button class="btn btn-primary" type="submit" formmethod="post">Добавить журнал</button>
+    </form>
+</div>
+<br>
+<div class="row">
+    <div class="col col-4">
+        <a>
+            <span class="visually-hidden">Картинка журнала</span>
+            <img src="{{ url_for('static', filename='images/journal_preview.png') }}" class="img-fluid" alt="Превью журнала">
+        </a>
+    </div>
+    <div class="col col-8">
+        <ul class="nav flex-column">
+            {% for i in range(count_of_journals) %}
+            <li>
+                <a class="h2" href="{{ url_for('journal_pdf', journal_filename=journals[i]) }}">{{ journals[i] }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}

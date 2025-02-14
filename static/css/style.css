@@ -1,0 +1,63 @@
+/*Based on Bootstrap v4.3.1 (https://getbootstrap.com/) */
+
+@import url('bootstrap.min.css');
+/*h1 {
+    border: 2px #eee solid;
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}*/
+
+/*Невидимый текст*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+/*Фоновое изображение на главной странице*/
+.main-banner {
+  background-image: url('/static/images/main_banner.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+}
+
+.journal-preview-scale{
+  width: 100%;
+  height: auto;
+}
+
+.archive-table{
+  white-space: nowrap;
+}
+
+
+.table-with-grid {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+.with-grid {
+  border: 1px solid #000;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-footer {
+    .footer;
+    flex: 0 0 auto;
+}

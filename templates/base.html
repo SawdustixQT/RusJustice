@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Icon -->
+    <link rel="icon" href="/static/images/favicon.png" type="image/png">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+<!--    <link rel="stylesheet"-->
+<!--          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
+<!--          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"-->
+<!--          crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="static/css/style.css"/>-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <title>{% block title %} {% endblock title %}</title>
+</head>
+
+<body>
+<!-- Верхнее меню навигации-->
+<div class="" style="background-color: #3f2009">
+    <div class="d-flex justify-content-center">
+        <nav class="navbar navbar-expand-md navbar-light text-white" style="background-color: #3f2009">
+            <div class="container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th colspan="7" class="text-center">
+                            <a class="navbar-brand" style="color: #FFFFFF">Создаем право будущего</a>
+                        </th>
+                    </tr>
+                    <tr class="nav-tr">
+                        <th>
+                            <a href="{{ url_for('main_page') }}">
+                                <img src="{{ url_for('static', filename='images/logo.png') }}" width="104" height="104" alt="Логотип университета" >
+                                <span class="visually-hidden">Логотип университета</span>
+                            </a>
+                        </th>
+                        <th colspan="6">
+                            <div class="row">
+                                <a style="font-size: 3rem">Российское правосудие</a>
+                            </div>
+                            <div class="row">
+                                <a style="font-size: 2rem">Научно-практический журнал</a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                       <th colspan="7" class="text-center">
+                           <a class="navbar-brand">Учредитель и издатель – ФГБОУВО Российский государственный университет правосудия имени В.М. Лебедева</a>
+                       </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr class="nav-tr">
+                        <td>
+                            <a class="navbar-brand text-light" href="{{ url_for('main_page')}}">Главная страница</a>
+                        </td>
+                        <td>
+                            <a class="navbar-brand text-light" href="{{ url_for('editorial_board') }}">Редколлегия</a>
+                        </td>
+                        <td>
+                            <a class="navbar-brand text-light" href="{{ url_for('journals') }}">Журналы</a>
+                        </td>
+                        <td>
+                            <a class="navbar-brand text-light" href="{{ url_for('publications') }}">Редакционная политика</a>
+                        </td>
+                        <td>
+                            <a class="navbar-brand text-light" href="{{ url_for('publication_policy') }}">Публикационная этика</a>
+                        </td>
+                        <td>
+                            <a class="navbar-brand text-light" href="{{ url_for('to_authors') }}">Авторам</a>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Основной контент страницы -->
+<div class="d-flex justify-content-center">
+    <div class="container" >
+        <div class="row">
+            <br>
+            <div class="col col-9">
+                {% block content %} {% endblock content %}
+            </div>
+            <div class="col col-3" id="sticky-sidebar">
+                <div>
+                    <p class="h4 text-center" style="margin-top: 56px">Cвидетельство о регистрации: </p>
+                </div>
+                <div>
+                    <a class="text-center">Год основания - 2006</a>
+                    <p class="h4 text-center">Перечень</p>
+                </div>
+                <div class="row">
+                    <a class="col-4"><img src="{{ url_for('static', filename='') }}" class="img-fluid" alt="ВАК"></a>
+                    <a class="col-4"><img src="{{ url_for('static', filename='') }}" class="img-fluid" alt="RSCI"></a>
+                    <a class="col-4"><img src="{{ url_for('static', filename='') }}" class="img-fluid" alt="e-library"></a>
+                </div>
+                <p class="text center">Перечень</p>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Нижняя часть страницы -->
+<div class="d-flex justify-content-center" style="background-color: #3f2009">
+    <footer id="footer" class="py-3 navbar" style="background-color: #3f2009">
+        <div class="row mx-auto">
+            <div class="col mx-auto">
+                <h5 class="text-light">Российский государственный университет правосудия</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2 text-center text-light">
+                        <a>(2025)</a>
+                    </li>
+                    <li class="nav-item mb-2 text-center text-light">
+                        <a>Made on Flask with Jinja2 templates and Bootstrap</a>
+                    </li>
+                </ul>
+            </div>
+    <!--        <div class="col-md-5 offset-md-1 mb-3 mx-auto">-->
+    <!--        <form>-->
+    <!--            <h5>Подпишись на новости (Временно не работает)</h5>-->
+    <!--            <div class="d-flex flex-column flex-sm-row w-100 gap-2">-->
+    <!--                <span class="visually-hidden">Поле ввода почты и кнопка</span>-->
+    <!--                <input type="text" class="form-control" placeholder="Почтовый адрес">-->
+    <!--                <button class="btn btn-dark" type="button">Подписка</button>-->
+    <!--            </div>-->
+    <!--        </form>-->
+    <!--        </div>-->
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
+

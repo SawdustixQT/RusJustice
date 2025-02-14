@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<article class="offset-md-4">
+    <h1 class="text-center">{% block title %} Главная страница {% endblock title %}</h1>
+</article>
+<div class="row">
+    <div class="col-md-4 col-lg-4 col-sm-4 column">
+        <p class="h4 text-center">Новый выпуск</p>
+        <img src="{{ url_for('static', filename='images/new_release.png') }}" class="img-fluid" alt="Обложка журнала" style="">
+    </div>
+    <div class="col-md-8 col-lg-8 col-sm-8 column">
+        <p class="h4 text-center">О журнале</p>
+    </div>
+</div>
+
+{% endblock content %}
